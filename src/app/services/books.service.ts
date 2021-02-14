@@ -26,6 +26,7 @@ export class BooksService {
     firebase.database().ref('/books')
     .on('value', (data: firebase.database.DataSnapshot) => {
       this.books = data.val() ? data.val(): [];
+      console.log("Get books");
       this.emitBooks();
     })
   }
