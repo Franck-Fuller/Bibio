@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
@@ -13,6 +12,19 @@ import { HeaderComponent } from './header/header.component';
 import { AuthGuardService} from './services/auth-guard.service';
 import { AuthService} from './services/auth.service';
 import {BooksService} from './services/books.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes : Routes = [
+  {path : 'auth/signup', component: SignupComponent},
+  { path : 'auth/sigin', component: SigninComponent},
+  { path : 'books', component: BookListComponent},
+  { path: 'books/new', component: BookFormComponent},
+  { path: 'books/view/:id', component: SingleBookComponent}
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +38,10 @@ import {BooksService} from './services/books.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ AuthGuardService, AuthService, BooksService],
   bootstrap: [AppComponent]
