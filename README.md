@@ -1,7 +1,6 @@
 # Biblio
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.3.
-
+Il s'agit d'une petite appli web pour gérer les livres chez soi. On a la possibilité d'ajouter des livres, les supprimer, ajouter des photos pour les livres. 
+Note : Le frontend c'est pas encore trop ça. Je reviendrais dessus
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
